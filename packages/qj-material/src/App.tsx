@@ -4,8 +4,9 @@ import {Tabs} from 'antd';
 import {AppstoreOutlined, LayoutOutlined} from '@ant-design/icons';
 import TemplateC from "./components/templateC";
 import ModuleC from "./components/moduleC";
-
+import * as Materials from 's-material-react'
 const App = () => {
+
   const items = [
     {
       label: (
@@ -26,8 +27,8 @@ const App = () => {
 
   return (
       <div className={'materials-container'}>
-      <Tabs items={items} className={'tabs'}/>
-    </div>
+        <Tabs items={items} className={'tabs'}/>
+      </div>
   )
 }
 

@@ -51,13 +51,13 @@ module.exports = {
         './operate': './src/App',
       },
       remotes: {
-        'qj-operate-vue': 'qj_operate_vue@http://localhost:3005/remoteEntry.js'
+        'qj-operate-vue': 'qj_operate_vue@http://localhost:3004/remoteEntry.js'
       },
       shared: {
         ...deps,
         "qj-shared-library": {
-          import: "qj-shared-library",
-          requiredVersion: require("../s-shared-library-1.0/package.json").version,
+          import: "@brushes/qj-shared-library",
+          requiredVersion: deps["@brushes/qj-shared-library"],
         },
         "react": {
           singleton: true,

@@ -4,7 +4,7 @@ const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
   output: {
-    publicPath: "http://localhost:3005/",
+    publicPath: "http://localhost:3004/",
   },
 
   resolve: {
@@ -12,7 +12,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 3005,
+    port: 3004,
     historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',

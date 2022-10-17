@@ -1,24 +1,18 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const {dependencies: deps} = require("../package.json");
+const path = require("./paths");
 
-const deps = require("./package.json").dependencies;
+require('dotenv').config()
+
 module.exports = {
   output: {
-    publicPath: "http://localhost:3006/",
+    publicPath: 'auto',
   },
 
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
   },
-
-  devServer: {
-    port: 3006,
-    historyApiFallback: true,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-  },
-
   module: {
     rules: [
       {
@@ -30,7 +24,7 @@ module.exports = {
       },
       {
         test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
@@ -44,30 +38,34 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "qj_monitor_react",
-      filename: "remoteEntry.js",
-      remotes: {},
+      name: 'qj_material',
+      filename: 'remoteEntry.js',
       exposes: {
-        './monitor': "./src/view/index.tsx"
+        './materials': path('src/react-components'),
+        './menu': path('src/App'),
       },
       shared: {
         ...deps,
-        "qj-shared-library": {
-          import: "qj-shared-library",
-          requiredVersion: require("../s-shared-library-1.0/package.json").version,
+        "s-material-vue": {
+          import: "s-material-vue",
+          requiredVersion: require("../../s-material-vue/package.json").version,
         },
-        react: {
+        "qj-shared-library": {
+          import: "@brushes/qj-shared-library",
+          requiredVersion: deps["@brushes/qj-shared-library"],
+        },
+        "react": {
           singleton: true,
           requiredVersion: deps.react,
         },
         "react-dom": {
           singleton: true,
           requiredVersion: deps["react-dom"],
-        },
+        }
       },
     }),
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
-    }),
+      template: path("src/index.html")
+    })
   ],
 };

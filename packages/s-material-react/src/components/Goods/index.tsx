@@ -50,7 +50,7 @@ const GoodsJsx: React.FC<GoodsType> = ({ defaultValue = [], margin, circular, ce
                 });
                 setList(result);
             } catch (err) {
-                setList(value);
+                setList(defaultValue);
             }
 
         })();
@@ -60,7 +60,7 @@ const GoodsJsx: React.FC<GoodsType> = ({ defaultValue = [], margin, circular, ce
     }, [goods]);
 
     return (
-        <div
+        <View
             style={{
                 display: 'grid',
                 gap,
@@ -95,7 +95,7 @@ const GoodsJsx: React.FC<GoodsType> = ({ defaultValue = [], margin, circular, ce
                     </div>
                 </div>
             ))}
-        </div>
+        </View>
     );
 };
 
