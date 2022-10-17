@@ -82,13 +82,13 @@ const GoodsJsx: React.FC<GoodsType> = ({ defaultValue = [], margin, circular, ce
                         <div className={'titleType'}>{item.goodsName}</div>
                         <div className={'subTitle'}>{item.brandName}</div>
                         <div className={'price'}>
-                            <div className={'subPrice'}>¥</div>
+                            <span className={'subPrice'}>¥</span>
                             {item.pricesetNprice}
                             {markedPrice === 1 && (
-                                <div className={'markedPrice'}>
-                                    <div className={'subPrice'}>¥</div>
+                                <span className={'markedPrice'}>
+                                    <span className={'subPrice'}>¥</span>
                                     {item.pricesetMakeprice}
-                                </div>
+                                </span>
                             )}
                         </div>
                         {/*<QjIcon name={'icon-icon2'} />*/}

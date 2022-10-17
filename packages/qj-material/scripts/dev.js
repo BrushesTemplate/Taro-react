@@ -41,14 +41,13 @@ module.exports = {
       name: 'qj_material',
       filename: 'remoteEntry.js',
       exposes: {
-        './materials': path('src/react-components'),
         './menu': path('src/App'),
       },
       shared: {
         ...deps,
-        "s-material-vue": {
-          import: "s-material-vue",
-          requiredVersion: require("../../s-material-vue/package.json").version,
+        "s-material-react": {
+          import: "s-material-react",
+          requiredVersion: require("../../s-material-react/package.json").version,
         },
         "qj-shared-library": {
           import: "@brushes/qj-shared-library",
