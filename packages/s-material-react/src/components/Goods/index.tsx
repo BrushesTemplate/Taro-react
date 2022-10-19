@@ -1,5 +1,5 @@
 import React, { useEffect, useState, memo, useRef } from 'react';
-import { View, Text } from '@tarojs/components';
+import { View, Text } from '@brushes/qj-simulate-component';
 import { querySkuNotOnShelf } from '@brushes/api';
 import { _ } from '@brushes/tools';
 const { isEqual, isEmpty } = _;
@@ -60,7 +60,7 @@ const GoodsJsx: React.FC<GoodsType> = ({ defaultValue = [], margin, circular, ce
     }, [goods]);
 
     return (
-        <div
+        <View
             style={{
                 display: 'grid',
                 gap,
@@ -69,7 +69,7 @@ const GoodsJsx: React.FC<GoodsType> = ({ defaultValue = [], margin, circular, ce
             }}
         >
             {list.map((item, index) => (
-                <div
+                <View
                     style={{
                         overflow: 'hidden',
                         borderRadius: circular === 2 ? 0 : '16Px'
@@ -77,25 +77,25 @@ const GoodsJsx: React.FC<GoodsType> = ({ defaultValue = [], margin, circular, ce
                     className={'goods'}
                     key={item.goodsCode}
                 >
-                    <div className={`goods-img`} style={{backgroundImage: `url(${item.dataPic})`}}></div>
-                    <div className={'space'}>
-                        <div className={'titleType'}>{item.goodsName}</div>
-                        <div className={'subTitle'}>{item.brandName}</div>
-                        <div className={'price'}>
-                            <span className={'subPrice'}>¥</span>
+                    <View className={`goods-img`} style={{backgroundImage: `url(${item.dataPic})`}}></View>
+                    <View className={'space'}>
+                        <View className={'titleType'}>{item.goodsName}</View>
+                        <View className={'subTitle'}>{item.brandName}</View>
+                        <View className={'price'}>
+                            <Text className={'subPrice'}>¥</Text>
                             {item.pricesetNprice}
                             {markedPrice === 1 && (
-                                <span className={'markedPrice'}>
-                                    <span className={'subPrice'}>¥</span>
+                                <Text className={'markedPrice'}>
+                                    <Text className={'subPrice'}>¥</Text>
                                     {item.pricesetMakeprice}
-                                </span>
+                                </Text>
                             )}
-                        </div>
+                        </View>
                         {/*<QjIcon name={'icon-icon2'} />*/}
-                    </div>
-                </div>
+                    </View>
+                </View>
             ))}
-        </div>
+        </View>
     );
 };
 

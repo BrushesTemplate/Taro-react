@@ -1,6 +1,6 @@
 import React, { useState, memo } from 'react';
-import { View } from '@tarojs/components';
-import { Image, Space } from 'antd-mobile'
+import { View } from '@brushes/qj-simulate-component';
+import { Image } from 'antd-mobile'
 
 interface TextsType {
     defaultValue: Array<{
@@ -18,7 +18,7 @@ const demoSrc =
 const TextJsx: React.FC<TextsType> = ({ defaultValue = [], margin, circular, cell, gap = 10 }) => {
     const [list, setList] = useState<Array<any>>(defaultValue);
     return (
-        <div
+        <View
             style={{
                 display: 'grid',
                 gap,
@@ -28,7 +28,7 @@ const TextJsx: React.FC<TextsType> = ({ defaultValue = [], margin, circular, cel
         >
           <Image src={demoSrc} />
             {list.map((item, index) => (
-                <div
+                <View
                     style={{
                         overflow: 'hidden',
                         borderRadius: circular === 1 ? 8 : 0
@@ -36,13 +36,13 @@ const TextJsx: React.FC<TextsType> = ({ defaultValue = [], margin, circular, cel
                     className={'goods'}
                     key={index}
                 >
-                    <div className={'space'}>
-                        <div className={'titleType'}>{item.title}</div>
-                        <div className={'subTitle'}>{item.subTitle}</div>
-                    </div>
-                </div>
+                    <View className={'space'}>
+                        <View className={'titleType'}>{item.title}</View>
+                        <View className={'subTitle'}>{item.subTitle}</View>
+                    </View>
+                </View>
             ))}
-        </div>
+        </View>
     );
 };
 

@@ -25,6 +25,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@brushes/qj-simulate-component": "^0.0.1",
     "@brushes/tools": "^1.0.25",
     "@tarojs/components": "^3.5.4",
     "@tarojs/taro": "^3.5.4",

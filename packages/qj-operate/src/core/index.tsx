@@ -1,10 +1,9 @@
 import React from 'react';
 import './index.scss';
 import {NodeGraph} from 'qj-shared-library';
-import IndexReact from './index-react';
+import IndexReact from './react';
 
-const Index = ({defaultValue}: { defaultValue: NodeGraph }) => {
-
+const Index = ({defaultValue = {}}: { defaultValue?: NodeGraph }) => {
   return (
     <IndexReact defaultValue={defaultValue}/>
   )
