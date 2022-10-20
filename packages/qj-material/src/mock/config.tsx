@@ -14,16 +14,7 @@ export const config = [
             name: '主标题',
             icon: 'icon-tupian_huaban',
             props: {
-              defaultValue: [
-                {
-                  title: '默认标题',
-                  subTitle: '千匠网络',
-                }
-              ],
-              cell: 1,
-              circular: 1,
-              margin: 8,
-              markedPrice: 1
+
             }
           },
           {

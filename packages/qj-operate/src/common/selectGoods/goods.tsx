@@ -2,18 +2,19 @@ import {Button, Form, FormInstance, Space, Table} from 'antd';
 import {
   useGoods,
 } from '@brushes/store';
-import {SpacingJsx} from '@brushes/components';
+import {NamePath, SpacingJsx} from '@brushes/components';
 import {SearchMaterials} from '@brushes/materials';
 import {defaultFormConfig, defaultColumns} from './config';
 import React, {useEffect, useRef} from 'react';
 import {TableRowSelection} from 'antd/es/table/interface';
+// @ts-ignore
 import {useLowCodeGraph} from 'qj-shared-library';
 
-export const GoodsJsx = ({form, handleCancel}: { form: FormInstance; handleCancel: Function }) => {
+export const GoodsJsx = ({form, name = '', handleCancel}: { form: FormInstance; name: NamePath | undefined; handleCancel: Function }) => {
   const monitorInstance = useLowCodeGraph(1);
-  const {data = {}, pagination, isLoading, queryImpl, onChange} = useGoods('goods');
+  const {data = {}, pagination, isLoading, queryImpl, onChange} = useGoods(name + '');
   const ref = useRef<Array<string | number>>([]);
-  const goods = Form.useWatch('goods', form);
+  const goods = Form.useWatch(name, form);
   useEffect(() => {
     if(!goods) return
     const values = form.getFieldsValue();
@@ -25,11 +26,11 @@ export const GoodsJsx = ({form, handleCancel}: { form: FormInstance; handleCance
     onChange: (selectedRowKeys) => {
       ref.current = selectedRowKeys
     },
-    defaultSelectedRowKeys: form.getFieldValue('goods')
+    defaultSelectedRowKeys: form.getFieldValue(name)
   };
 
   const saveImpl = () => {
-    form.setFieldValue('goods', ref.current)
+    form.setFieldValue(name, ref.current)
     handleCancel()
   }
 

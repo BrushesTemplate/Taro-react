@@ -33,7 +33,7 @@
   "dependencies": {
     "@brushes/materials": "^0.0.24",
     "@brushes/qj-shared-library": "^0.0.4",
-    "@brushes/store": "^1.0.37",
+    "@brushes/store": "^1.0.40",
     "cross-env": "^7.0.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

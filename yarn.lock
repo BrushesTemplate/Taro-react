@@ -1036,6 +1036,16 @@
     prettier "^2.7.1"
     typescript ">4.0.0"
 
+"@brushes/api@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/@brushes/api/-/api-0.0.6.tgz#1043c09361700499feac2f200cbf4fe269c5b70d"
+  integrity sha512-IvWjQLp62SkwnrGPeJfE+8hMlbGbIj4LzcAux6ZNZCV9jRBQWBuNL/SFrNoqOJq5kEJytKNVo+efp9bgeKlpRQ==
+  dependencies:
+    "@brushes/tools" "^1.0.18"
+    "@types/node" ">18.0.0"
+    prettier "^2.7.1"
+    typescript ">4.0.0"
+
 "@brushes/components@^0.0.28":
   version "0.0.28"
   resolved "https://registry.npmjs.org/@brushes/components/-/components-0.0.28.tgz#483763794218b308480ddf3ffb5c687d2ff85a0b"
@@ -1070,11 +1080,12 @@
   dependencies:
     react "^18.0.0"
 
-"@brushes/store@^1.0.37":
-  version "1.0.37"
-  resolved "https://registry.npmjs.org/@brushes/store/-/store-1.0.37.tgz#7e06aa3892196412d5f046639c27d876c2c78b0a"
-  integrity sha512-VnxunHg7b7IkEil5keK4xc+b81UbeSSrJ/qAMj6it6hE/VTUB1nrgTJVwFeRriqX0cf7iphZHSrfCvGDvZRanA==
+"@brushes/store@^1.0.40":
+  version "1.0.40"
+  resolved "https://registry.npmjs.org/@brushes/store/-/store-1.0.40.tgz#5843e4a1f98e97ffb67dd79a4307fc6f6ec68787"
+  integrity sha512-gXhR6aXJX3aicOsoir7+WnDA9bqa8059YJzra0qRXv2BO+SJ8aV99y7CTNnPT46n9uqJJwjBTiMBxskaFl81Iw==
   dependencies:
+    "@brushes/api" "^0.0.6"
     react-router-dom "^6.3.0"
 
 "@brushes/tools@^1.0.18", "@brushes/tools@^1.0.25":

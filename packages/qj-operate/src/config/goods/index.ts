@@ -1,8 +1,5 @@
-import {FieldType, NamePath, Wrapper} from '@brushes/components';
-import { Button, FormInstance } from 'antd';
-import React, {useState} from 'react';
-import Modal from 'antd/es/modal/Modal';
-import {GoodsJsx} from './goods';
+import {FieldType} from '@brushes/components';
+import {SelectGoods, SelectPicture} from '../../common';
 export const formConfig: Array<FieldType> = [
   {
     label: '选择模版',
@@ -81,40 +78,21 @@ export const formConfig: Array<FieldType> = [
     }
   },
   {
+    label: '选择图片',
+    name: 'picture',
+    type: 'slot',
+    rules: [{required: true, message: '请输入标题'}],
+    extraProps: {
+      render: SelectPicture
+    }
+  },
+  {
     label: '选择商品',
     name: 'goods',
     type: 'slot',
     rules: [{required: true, message: '请输入标题'}],
     extraProps: {
-      render: ({form, name}: { name: NamePath; form: FormInstance }) => {
-        const num = form.getFieldValue('goods')?.length || 0;
-        const [isModalVisible, setIsModalVisible] = useState(false);
-
-        const showModal = () => {
-          setIsModalVisible(true);
-        };
-        const handleCancel = () => {
-          setIsModalVisible(false);
-        };
-
-        return (
-          <>
-            <Button onClick={showModal} style={{padding: 0}} type={'link'}>
-              { num > 0 ? `已选择${num}个商品` : '选择商品' }
-            </Button>
-            <Modal
-              width={800}
-              title="选择商品"
-              open={isModalVisible}
-              footer={null}
-              onCancel={handleCancel}>
-              <Wrapper>
-                <GoodsJsx handleCancel={handleCancel} form={form}/>
-              </Wrapper>
-            </Modal>
-          </>
-        )
-      }
+      render: SelectGoods
     }
   },
 ]
