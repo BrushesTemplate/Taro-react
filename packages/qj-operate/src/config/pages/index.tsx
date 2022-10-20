@@ -1,67 +1,49 @@
 import {FieldType} from '@brushes/components';
-import React from 'react';
 export const formConfig: Array<FieldType> = [
   {
-    label: '选择模版',
+    label: '页面名称',
     name: 'cell',
+    type: 'text',
+    rules: [{required: true, message: '请输入标题'}],
+  },
+  // {
+  //   label: '主题色',
+  //   name: 'circular',
+  //   type: 'radioGroup',
+  //   extraProps: {
+  //     options: [
+  //       {
+  //         value: 1,
+  //         label: '浅色'
+  //       },
+  //       {
+  //         value: 2,
+  //         label: '深色'
+  //       },
+  //     ]
+  //   }
+  // },
+  {
+    label: '页头文字颜色',
+    name: 'topColor',
     type: 'radioGroup',
     rules: [{required: true, message: '请输入标题'}],
     extraProps: {
       options: [
         {
           value: 1,
-          label: '一行1个'
+          label: '浅色'
         },
         {
           value: 2,
-          label: '一行2个'
-        },
-      ]
-    }
-  },
-  {
-    label: '是否圆角',
-    name: 'circular',
-    type: 'radioGroup',
-    rules: [{required: true, message: '请输入标题'}],
-    extraProps: {
-      options: [
-        {
-          value: 1,
-          label: '圆角'
-        },
-        {
-          value: 2,
-          label: '直角'
-        },
-      ]
-    }
-  },
-  {
-    label: '间距',
-    name: 'margin',
-    type: 'radioGroup',
-    rules: [{required: true, message: '请输入标题'}],
-    extraProps: {
-      options: [
-        {
-          value: 8,
-          label: '小'
-        },
-        {
-          value: 10,
-          label: '中'
-        },
-        {
-          value: 15,
-          label: '大'
+          label: '深色'
         },
       ]
     }
   },
 ]
 
-export const title = '文本配置';
+export const title = '页面配置';
 export const info = '灵活设置展示样式。';
 export const initialValues = {
   cell: 1,

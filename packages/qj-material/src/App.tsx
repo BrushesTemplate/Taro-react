@@ -11,6 +11,7 @@ import {useLowCodeGraph} from 'qj-shared-library';
 const App = () => {
   const expGraph = useLowCodeGraph(1);
   useEffect(() => {
+    console.log(expGraph)
     expGraph.init(Materials);
   }, [])
   const items = [

@@ -44,12 +44,12 @@ module.exports = {
         './menu': path('src/App'),
       },
       shared: {
-        ...deps,
         "s-material-react": {
           import: "s-material-react",
           requiredVersion: require("../../s-material-react/package.json").version,
         },
         "qj-shared-library": {
+          singleton: true,
           import: "@brushes/qj-shared-library",
           requiredVersion: deps["@brushes/qj-shared-library"],
         },

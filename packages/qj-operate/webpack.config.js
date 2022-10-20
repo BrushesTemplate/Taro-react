@@ -5,7 +5,7 @@ require('dotenv').config()
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "http://localhost:3002/",
+    // publicPath: "http://localhost:4002/",
   },
 
   resolve: {
@@ -13,7 +13,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 3002,
+    port: 4002,
     historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
@@ -48,14 +48,16 @@ module.exports = {
       name: 'qj_operate',
       filename: 'remoteEntry.js',
       exposes: {
-        './operate': './src/App',
+        './operate': './src/core',
       },
       // remotes: {
       //   'qj-operate-vue': 'qj_operate_vue@http://localhost:3004/remoteEntry.js'
       // },
       shared: {
-        ...deps,
+        // alias
         "qj-shared-library": {
+          singleton: true,
+          // 实际引入名字
           import: "@brushes/qj-shared-library",
           requiredVersion: deps["@brushes/qj-shared-library"],
         },

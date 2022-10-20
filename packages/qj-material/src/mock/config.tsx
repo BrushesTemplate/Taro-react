@@ -84,22 +84,6 @@ export const config = [
           },
         ],
       },
-      {
-        id: 3,
-        type: 'live',
-        name: '直播',
-        icon: 'icon-zhibo',
-        group: [],
-        props: {}
-      },
-      {
-        id: 4,
-        type: 'coupon',
-        name: '优惠券',
-        icon: 'icon-youhuiquan',
-        group: [],
-        props: {}
-      }
     ],
   },
 ]
