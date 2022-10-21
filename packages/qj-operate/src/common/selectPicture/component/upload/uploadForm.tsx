@@ -9,7 +9,7 @@ const fieldConfig: Array<FieldType>  = [
     rules: [{required: true, message: '请选择图片'}],
     extraProps: {
       render: DetailImage,
-      suffixicon: <span style={{fontSize: 12, color: '#999'}}>建议上传400X400像素的图片</span>,
+      suffixicon: <span style={{fontSize: 12, color: '#999'}}>建议上传1Mb以内的图片</span>,
       accept: "image/*",
       maxCount: 1,
       listType: "picture-card",
@@ -30,12 +30,14 @@ export const transformDataConfig: Array<TransformType> = [
 const UploadForm = ({onSubmit}: {onSubmit: () => void}) => {
 
   return (
+    <div style={{padding: 5, marginTop: 15 }}>
     <DynamicForm
       transformSubmitDataConfig={transformDataConfig}
       fields={fieldConfig}
       onSubmit={onSubmit}
       saveText={'保存'}
     />
+    </div>
   )
 }
 

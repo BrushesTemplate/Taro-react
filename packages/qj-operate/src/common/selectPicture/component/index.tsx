@@ -27,7 +27,7 @@ const TabsPic: React.FC<Props> = ({handleCancel, name, form, ...props}) => {
 
   return (
     <>
-      <PictureJsx name={name} onValueChange={onValueChange } defaultValue={defaultValue}/>
+      <PictureJsx name={name} onValueChange={ onValueChange } defaultValue={defaultValue}/>
       <div style={{textAlign: 'right', marginTop:20, paddingBottom: 10}}>
         <Space align={'end'}>
           <Button onClick={handleCancel}>取消</Button>
