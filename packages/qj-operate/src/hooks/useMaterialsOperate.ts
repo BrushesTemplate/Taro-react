@@ -11,7 +11,9 @@ export function useMaterialsOperate(defaultValue: NodeGraph, form: FormInstance)
   const monitorInstance = useLowCodeGraph(1);
   const initialValues = defaultValue.props;
   const { formConfig, title, info } = get(config, defaultValue.type, {});
+
   const callbackImpl = useImmutableCallback((changedValues: any, allValues: any) => {
+    console.log(16, allValues)
     monitorInstance.updateNode(allValues)
   });
 

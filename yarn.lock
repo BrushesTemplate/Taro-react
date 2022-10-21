@@ -1051,6 +1051,16 @@
   resolved "https://registry.npmjs.org/@brushes/components/-/components-0.0.28.tgz#483763794218b308480ddf3ffb5c687d2ff85a0b"
   integrity sha512-XNR0W1nW9cIaZt5I/DfR9FHLvhOeDKygp/bhW1OCtItMMjQFNEZ3Ool+YUMCEclYhTAA73pnB75YtHtyXkEn3g==
 
+"@brushes/components@^0.0.31":
+  version "0.0.31"
+  resolved "https://registry.npmjs.org/@brushes/components/-/components-0.0.31.tgz#0758403c67730d66e137d3321e6320b6f45594df"
+  integrity sha512-Vy7TcPqq6+TKBtF8jryL5vyzQPsCToqC7C8jUOQ5QVbgRqcyoVFIr63W+Rc9r2FkV1272h+zez2FUysP717ZRg==
+  dependencies:
+    "@brushes/tools" "^1.0.18"
+    "@tanstack/react-query" "^4.0.10"
+    antd "^4.21.7"
+    react "^18.0.0"
+
 "@brushes/materials@^0.0.24":
   version "0.0.24"
   resolved "https://registry.npmjs.org/@brushes/materials/-/materials-0.0.24.tgz#f148137b3468dc0402686a73835f965d249381bd"
@@ -1080,10 +1090,10 @@
   dependencies:
     react "^18.0.0"
 
-"@brushes/store@^1.0.40":
-  version "1.0.40"
-  resolved "https://registry.npmjs.org/@brushes/store/-/store-1.0.40.tgz#5843e4a1f98e97ffb67dd79a4307fc6f6ec68787"
-  integrity sha512-gXhR6aXJX3aicOsoir7+WnDA9bqa8059YJzra0qRXv2BO+SJ8aV99y7CTNnPT46n9uqJJwjBTiMBxskaFl81Iw==
+"@brushes/store@^1.0.41":
+  version "1.0.41"
+  resolved "https://registry.npmjs.org/@brushes/store/-/store-1.0.41.tgz#d8bdf3aaa6b0ca92f4c4ed7bde836ae14c7a0539"
+  integrity sha512-UKRaGW09QIeCrp3FV1GBTi/xD1PicoD+nhAzRNtdqKULsHHN85YJMZeo2moBt/SxsPOoVdtLp3sqApWD9DYL8Q==
   dependencies:
     "@brushes/api" "^0.0.6"
     react-router-dom "^6.3.0"
@@ -2239,7 +2249,7 @@
   resolved "https://registry.npmjs.org/@tanstack/query-core/-/query-core-4.12.0.tgz#0e96adcfe182efc4ea4c21802f7596d56c6cd60a"
   integrity sha512-KEiFPNLMFByhNL2s6RBFL6Z5cNdwwQzFpW/II3GY+rEuQ343ZEoVyQ48zlUXXkEkbamQFIFg2onM8Pxf0Yo01A==
 
-"@tanstack/react-query@^4.3.4":
+"@tanstack/react-query@^4.0.10", "@tanstack/react-query@^4.3.4":
   version "4.12.0"
   resolved "https://registry.npmjs.org/@tanstack/react-query/-/react-query-4.12.0.tgz#2cb233ef1ccf7537aeed61ca171fc3dcc52d9c57"
   integrity sha512-prchV1q+CJ0ZVo8Rts2cOF3azDfQizZZySmH6XXsXRcPTbir0sgb9fp0vY/5l5ZkSYjTvWt/OL8WQhAhYMSvrA==
@@ -3112,7 +3122,7 @@ antd-mobile@^5.24.0:
     tslib "^2.4.0"
     use-sync-external-store "^1.1.0"
 
-antd@^4.23.1:
+antd@^4.21.7, antd@^4.23.1:
   version "4.23.6"
   resolved "https://registry.npmjs.org/antd/-/antd-4.23.6.tgz#e21523c401f0e8fdff47bec48bd6535247492b27"
   integrity sha512-AYH57cWBDe1ChtbnvG8i9dpKG4WnjE3AG0zIKpXByFNnxsr4saV6/19ihE8/ImSGpohN4E2zTXmo7R5/MyVRKQ==

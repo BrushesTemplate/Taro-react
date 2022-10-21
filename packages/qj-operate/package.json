@@ -31,9 +31,10 @@
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
+    "@brushes/components": "^0.0.31",
     "@brushes/materials": "^0.0.24",
     "@brushes/qj-shared-library": "^0.0.4",
-    "@brushes/store": "^1.0.40",
+    "@brushes/store": "^1.0.41",
     "cross-env": "^7.0.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

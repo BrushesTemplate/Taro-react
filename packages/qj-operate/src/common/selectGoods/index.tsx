@@ -5,7 +5,7 @@ import {NamePath, Wrapper} from '@brushes/components';
 import {GoodsJsx} from './goods';
 
 
-export function SelectGoods({form, name}: { name: NamePath; form: FormInstance }) {
+export function SelectGoods({form, name}: { name: string; form: FormInstance }) {
   const num = form.getFieldValue(name)?.length || 0;
   const [isModalVisible, setIsModalVisible] = useState(false);
 

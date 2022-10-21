@@ -79,6 +79,7 @@ module.exports = {
         REACT_APP_BASE_URL: JSON.stringify(process.env.REACT_APP_BASE_URL),
         REACT_APP_SESSION_KEY: JSON.stringify(process.env.REACT_APP_SESSION_KEY),
         REACT_APP_APPLICATION: JSON.stringify(process.env.REACT_APP_APPLICATION),
+        REACT_IMG_PATH: JSON.stringify(process.env.REACT_IMG_PATH),
       },
     }),
   ],
